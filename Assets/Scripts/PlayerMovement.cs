@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        controller = GetComponent<CharacterController2D>(); // Добавили получение компонента CharacterController2D
+        controller = GetComponent<CharacterController2D>(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CharacterController2D
         animator = GetComponent<Animator>();
     }
 
@@ -41,15 +41,16 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
-        if (controller != null) // Добавили проверку на наличие controller
-        {
-            bool isWalking = Mathf.Abs(horizontalMove) > 0f;
-            animator.SetBool("IsWalking", isWalking);
-        }
+        // if (controller != null) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ controller
+        // {
+        //     bool isWalking = Mathf.Abs(horizontalMove) > 0f;
+        //     animator.SetBool("IsWalking", isWalking);
+        // }
     }
 
     public void OnLanding()
     {
+		Debug.Log("Onlanding");
         animator.SetBool("IsJumping", false);
     }
 
