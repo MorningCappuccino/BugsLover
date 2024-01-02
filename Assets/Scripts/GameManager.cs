@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private int _bugsCount = 0;
+
     private void OnEnable()
     {
         Bug.OnBugGrab += OnBugGrab;
@@ -16,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     private void OnBugGrab() 
     {
-        Debug.Log("OnBugGrub");
+        _bugsCount++;
+        float jumpForce = CharacterController2DMod.Instance.GetDefaultJumpForce();
+        CharacterController2DMod.Instance.SetJumpForce(jumpForce - (_bugsCount * (10 * _bugsCount)));
+        Debug.Log("jumpForce: " + CharacterController2DMod.Instance.GetJumpForce());
     }
 }
