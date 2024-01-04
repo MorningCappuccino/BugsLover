@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private GameObject _winScreen;
+
     private int _bugsCount = 0;
     public int GetBugsCount() => _bugsCount;
     public void AddBugs(int count)
@@ -63,5 +65,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("1 stars"); 
                 break;
         }
+
+        _winScreen.SetActive(true);
     }
 }
