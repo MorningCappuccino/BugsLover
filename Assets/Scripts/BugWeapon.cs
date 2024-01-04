@@ -20,6 +20,7 @@ public class BugWeapon : MonoBehaviour
         {
             Instantiate(_bugBulletPrefab, _firePoint.position, _bugBulletPrefab.transform.rotation);
             GameManager.Instance.AddBugs(-1);
+            GameManager.Instance.AddScore(-50);
         }
     }
 }

@@ -6,7 +6,7 @@ public class Bug : MonoBehaviour
     public static event BugGrabDelegate OnBugGrab;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("OnTriggerEnter2D");
+        // Debug.Log("OnTriggerEnter2D");
         if (other.gameObject.tag == "Player") {
             Debug.Log("bag grabbed COLLISION");
             OnBugGrab();

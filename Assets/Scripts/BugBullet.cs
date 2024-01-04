@@ -6,6 +6,9 @@ public class BugBullet : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
+    public delegate void BugGrabDelegate();
+    public static event BugGrabDelegate OnBugGrab;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -19,6 +22,19 @@ public class BugBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //not a bug but a feature (game requirement)
+        if (transform.position.y < -10)
+        {
+            GameManager.Instance.AddScore(50);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Player") {
+            Debug.Log("OnCollisionEnter2D GRAB");
+            OnBugGrab();
+            Destroy(gameObject);
+        }
     }
 }

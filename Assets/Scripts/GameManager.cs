@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         Bug.OnBugGrab += OnBugGrab;
+        BugBullet.OnBugGrab += OnBugGrab;
     }
 
     private void OnDisable()
     {
         Bug.OnBugGrab -= OnBugGrab;
+        BugBullet.OnBugGrab -= OnBugGrab;
     }
 
     private void OnBugGrab() 
