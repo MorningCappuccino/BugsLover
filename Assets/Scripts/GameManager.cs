@@ -45,4 +45,23 @@ public class GameManager : MonoBehaviour
         CharacterController2DMod.Instance.SetJumpForce(jumpForce - (_bugsCount * (10 * _bugsCount)));
         // Debug.Log("jumpForce: " + CharacterController2DMod.Instance.GetJumpForce());
     }
+
+    public void CheckWin()
+    {
+        Debug.Log("CheckWin");
+
+        switch (_scoreCount) {
+            case 250:
+            case 200:
+                Debug.Log("3 stars"); 
+                break;
+            case 150:
+                Debug.Log("2 stars"); 
+                break;
+            case 100:
+            case 50:
+                Debug.Log("1 stars"); 
+                break;
+        }
+    }
 }
