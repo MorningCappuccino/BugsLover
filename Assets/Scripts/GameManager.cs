@@ -45,5 +45,7 @@ public class GameManager : MonoBehaviour
         float jumpForce = CharacterController2DMod.Instance.GetDefaultJumpForce();
         CharacterController2DMod.Instance.SetJumpForce(jumpForce - (_bugsCount * (10 * _bugsCount)));
         // Debug.Log("jumpForce: " + CharacterController2DMod.Instance.GetJumpForce());
+
+        AudioManager.Instance.PlaySound(AudioManager.Instance.getBug);
     }
 }

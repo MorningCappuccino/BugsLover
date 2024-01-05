@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
+
+            AudioManager.Instance.PlaySound(AudioManager.Instance.jump);
         }
 
         if (Input.GetButtonDown("Crouch"))

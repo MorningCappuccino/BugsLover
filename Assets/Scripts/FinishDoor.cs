@@ -20,5 +20,7 @@ public class FinishDoor : MonoBehaviour
         _winScreen.SetActive(true);
 
         StarRating.Invoke();
+
+        AudioManager.Instance.PlaySound(AudioManager.Instance.win);
     }
 }

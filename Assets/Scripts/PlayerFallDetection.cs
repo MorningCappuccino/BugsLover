@@ -16,6 +16,8 @@ public class PlayerFallDetection : MonoBehaviour
             // GameManager.Instance.GameOver();
             GameOverScreen.SetActive(true);
             detected = true;
+
+            AudioManager.Instance.PlaySound(AudioManager.Instance.gameOver);
         }
     }
 }

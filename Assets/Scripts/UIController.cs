@@ -23,4 +23,10 @@ public class UIController : MonoBehaviour
     {
         _scoreCountText.text = count.ToString();
     }
+
+    public void BtnSoundOnClick()
+    {
+        Debug.Log("BtnSoundOnClick");
+        AudioManager.Instance.PlaySound(AudioManager.Instance.interfaceClick);
+    }
 }
